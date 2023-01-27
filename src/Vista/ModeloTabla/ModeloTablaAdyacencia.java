@@ -17,7 +17,8 @@ public class ModeloTablaAdyacencia extends AbstractTableModel {
 
     private GrafoNoDirigidoEtiquetado<Posicion> grafo;
     private String[] columnas;
-
+    
+    @Override
     public int getRowCount() {
         return grafo.numVertices();
     }

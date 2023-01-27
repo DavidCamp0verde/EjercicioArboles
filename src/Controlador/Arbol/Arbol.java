@@ -6,6 +6,7 @@
 package Controlador.Arbol;
 
 import Controlador.ListaEnlazada.ListaEnlazada;
+import Vista.FrmArbolBinario;
 
 /**
  *
@@ -152,7 +153,7 @@ public class Arbol {
 
     public static void main(String[] args) {
         Arbol a = new Arbol();
-
+        
         try {
             a.insertar(56);
             a.insertar(34);
@@ -161,9 +162,10 @@ public class Arbol {
             a.insertar(35);
             a.insertar(60);
             a.insertar(90);
-            System.out.println("Nro de nodos: " + a.getNro_nodos());
-            System.out.println("Altura: " + a.getAltura());
-            System.out.println("Niveles: "+a.getNiveles().getSize());
+//            System.out.println("Nro de nodos: " + a.getNro_nodos());
+//            System.out.println("Altura: " + a.getAltura());
+//            System.out.println("Niveles: "+a.getNiveles().getSize());
+            new FrmArbolBinario(a).setVisible(true);
 //            a.getNiveles().obtener(1).imprimir();
 //            a.pre_orden().imprimir();
 //            a.post_orden().imprimir();
