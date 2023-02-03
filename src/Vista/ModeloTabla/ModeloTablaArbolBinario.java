@@ -36,18 +36,12 @@ public class ModeloTablaArbolBinario extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         try {
-            return arbol.getNiveles().obtener(0).obtener(0).getDato().toString();
-//            for (int i = 0; i < arbol.getNiveles().obtener(i).getSize(); i++) {
-//                ListaEnlazada<NodoArbol> aux = arbol.getNiveles().obtener(i);
-//                aux.imprimir();
-//                for(int j = 0; j < aux.getSize(); j++){
-//                    NodoArbol nodo = aux.obtener(j);
-//                    setValueAt(nodo.getDato().toString(), rowIndex/2, columnIndex);
-//                }
-//            }
+            if(arbol.getNiveles().obtener(rowIndex).obtener(columnIndex).getDato() == null){
+                return "---";
+            }else{
+                return arbol.getNiveles().obtener(rowIndex).obtener(columnIndex).getDato();
+            }
         } catch (Exception e) {
-//            System.out.println(e);
-//            System.out.println(e.getStackTrace()[0].getLineNumber()+" "+e.getStackTrace()[0].getClassName());
         }
         return "";
     }

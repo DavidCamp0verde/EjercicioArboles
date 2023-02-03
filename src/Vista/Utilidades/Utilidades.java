@@ -11,6 +11,7 @@ import Controlador.PosicionController;
 import Modelo.Arbol;
 import Modelo.Enum.Orientacion;
 import Modelo.Posicion;
+import Modelo.jarra.Jarra;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -48,6 +49,13 @@ public class Utilidades {
     
     public static Posicion getPosicionCombo(JComboBox cbx){
         return (Posicion)cbx.getSelectedItem();
+    }
+    
+    public static void cargarComboEstados(JComboBox cbx, Jarra jarra){
+        cbx.removeAllItems();
+        for(int i = 0; i <= jarra.getCapacidad(); i++){
+            cbx.addItem(i);
+        }
     }
     
     public static boolean guardarArchivoJSON(ArbolController arbol){
